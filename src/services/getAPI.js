@@ -1,6 +1,6 @@
 const getAllPok = async (setAllPok) => {
   try {
-    const URL = `https://pokeapi.co/api/v2/pokemon?limit=100`;
+    const URL = `https://pokeapi.co/api/v2/pokemon?limit=20`;
     const res = await fetch(URL);
     const data = await res.json();
     const list = data.results
@@ -13,7 +13,7 @@ const getAllPok = async (setAllPok) => {
       return listPokemons;
     }));
     
-    console.log(listPokemons);
+    // console.log(listPokemons);
     setAllPok(listPokemons);
   } catch (err) {
     console.log(err.message);
